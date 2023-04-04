@@ -5,27 +5,8 @@ def is_braces_balanced(some_string: str) -> bool:
         :param some_string: input string, can contain opening or closing braces: parentheses, square and curly brackets
         :return: true is the input string is "balanced" and false otherwise
     """
-    stack = list()
-    helper_dict = {
-        '}': '{',
-        ')': '(',
-        ']': '['
-    }
-    for i in some_string:
-        if i in ['(', '{', '[']:
-            stack.append(i)
-        else:
-            if len(stack) == 0:
-                return False
-            elif stack[len(stack) - 1] == helper_dict[i]:
-                stack.pop()
-            else:
-                return False
-    if len(stack) == 0:
-        return True
-    else:
-        return False
-
+    # your solution goes here
+    return True
 
 # TEST CASES:
 assert is_braces_balanced('({[]})')
