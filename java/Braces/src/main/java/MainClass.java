@@ -15,14 +15,14 @@ public class MainClass {
   }
 
   public static void main(String[] args) {
+    Assert.assertTrue(isStringBraceBalanced(""));
     Assert.assertTrue(isStringBraceBalanced("({[]})"));
+    Assert.assertTrue(isStringBraceBalanced("(()){}"));
     Assert.assertFalse(isStringBraceBalanced("({[}])"));
     Assert.assertFalse(isStringBraceBalanced("({[}]))))"));
-    Assert.assertTrue(isStringBraceBalanced(""));
     Assert.assertFalse(isStringBraceBalanced("}{][)("));
     Assert.assertFalse(isStringBraceBalanced("}{][)]("));
     Assert.assertFalse(isStringBraceBalanced("(((({{{{{"));
     Assert.assertFalse(isStringBraceBalanced("]]])}}})}}}}"));
-    Assert.assertTrue(isStringBraceBalanced("(()){}"));
   }
 }
