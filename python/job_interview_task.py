@@ -1,4 +1,4 @@
-def is_braces_balanced(some_string: str) -> bool:
+def is_braces_balanced(ent_string: str) -> bool:
     """
         is_braces_balanced checks if the input string brace-wise balanced. "Balanced" means, that the number and the
         order of opening and closing brackets are symmetrical. See test-cases for more details.
