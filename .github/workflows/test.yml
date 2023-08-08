@@ -1,0 +1,21 @@
+name: CI test pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch"
+        default: "main"
+        required: true
+
+jobs:
+  ci-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      # checks-out a repository, so your workflow can access it
+      - uses: actions/checkout@v3
+
+      - name: Create Python virtual environment
+        run: |
+          echo "Github run id = ${GITHUB_RUN_ID}"
+          echo "Current branch = ${GITHUB_HEAD_REF}"
