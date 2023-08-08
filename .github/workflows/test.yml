@@ -1,6 +1,10 @@
 name: CI test pipeline
 
 on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, unlocked, review_requested]
+    branches:
+      - main
   workflow_dispatch:
     inputs:
       branch:
@@ -18,5 +22,14 @@ jobs:
       - name: Echo variables
         run: |
           echo "Github run id = ${GITHUB_RUN_ID}"
-          echo "Current branch = ${GITHUB_HEAD_REF}"
-          env
+          echo "Current GITHUB_HEAD_REF = ${GITHUB_HEAD_REF}"
+          echo "Current GITHUB_REF_NAME = ${GITHUB_REF_NAME}"
+
+          if [ -z "${GITHUB_HEAD_REF}" ];
+          then
+            CURRENT_BRANCH="${GITHUB_REF_NAME}"
+          else
+            CURRENT_BRANCH="${GITHUB_HEAD_REF}"
+          fi
+          
+          echo "${CURRENT_BRANCH}"
