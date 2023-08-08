@@ -19,3 +19,4 @@ jobs:
         run: |
           echo "Github run id = ${GITHUB_RUN_ID}"
           echo "Current branch = ${GITHUB_HEAD_REF}"
+          env
